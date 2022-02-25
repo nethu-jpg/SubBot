@@ -78,7 +78,7 @@ async def next_page(bot, query):
         offset = 0
     search = BUTTONS.get(key)
     if not search:
-        await query.answer("You are using this for one of my old message, please send the request again.",show_alert=True)
+        await query.answer("පරණ එව්වට ඇගිලි ගහන්නෙපා හරිත 😏. අලුත් රික්වෙස්ට් එකක් දාන්න හලෝ 😗🙃",show_alert=True)
         return
 
     files, n_offset, total = await get_search_results(search, offset=offset, filter=True)
@@ -197,7 +197,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 except:
                     pass
             else:
-                await query.answer("ආ ආ ආ ඒක ඔයාගෙ එකක් නෙමෙයි !!",show_alert=True)
+                await query.answer("ආ ආ ආ ඒක ඔයාගෙ එකක් නෙමෙයි 😂😂 !!",show_alert=True)
 
 
     elif "groupcb" in query.data:
@@ -243,7 +243,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 parse_mode="md"
             )
         else:
-            await query.message.edit_text('පොඩි අවුලක් වගේ !!', parse_mode="md")
+            await query.message.edit_text('පොඩි අවුලක් වගේ🤨 !!', parse_mode="md")
         return
     elif "disconnect" in query.data:
         await query.answer()
@@ -259,7 +259,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 parse_mode="md"
             )
         else:
-            await query.message.edit_text('පොඩි අවුලක් වගේ !!', parse_mode="md")
+            await query.message.edit_text('පොඩි අවුලක් වගේ🤨 !!', parse_mode="md")
         return
     elif "deletecb" in query.data:
         await query.answer()
@@ -274,7 +274,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 "Successfully deleted connection"
             )
         else:
-            await query.message.edit_text('පොඩි අවුලක් වගේ !!', parse_mode="md")
+            await query.message.edit_text('පොඩි අවුලක් වගේ🤨 !!', parse_mode="md")
         return
     elif query.data == "backcb":
         await query.answer()
@@ -386,10 +386,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
             ],[
-            InlineKeyboardButton('ℹ️ Help', callback_data='help'),
-            InlineKeyboardButton('😊 About', callback_data='about')
+            InlineKeyboardButton('⚙️ Help', callback_data='help'),
+            InlineKeyboardButton('🔮 About', callback_data='about')
          ],[
-            InlineKeyboardButton('🔍 සබ් මෙතනින් ' , switch_inline_query_current_chat='')
+            InlineKeyboardButton('🔍 සබ් මෙතනින් ගම්න 🙂 ' , switch_inline_query_current_chat='')
             ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -399,9 +399,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "help":
         buttons = [[
-            InlineKeyboardButton('සබ් හොයාගන්නෙ කොහොමද ?', callback_data='howtofind')
+            InlineKeyboardButton('❓ සබ් හොයාගන්නෙ කොහොමද ❓', callback_data='howtofind')
             ],[
-            InlineKeyboardButton('ඔයාලගෙ සබ් අපිට දෙන්න ', callback_data='howtogive')
+            InlineKeyboardButton('🤝 ඔයාලගෙ සබ් අපිට දෙන්න 🤝', callback_data='howtogive')
             ],[
             InlineKeyboardButton('🏠 Home', callback_data='start'),
             InlineKeyboardButton('ℹ️ More', callback_data='more')
@@ -414,10 +414,10 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "about":
         buttons= [[
-            InlineKeyboardButton('ෆිල්ම් එහෙම බලනවනම් එන්න ', url='https://t.me/infinityCLK')
+            InlineKeyboardButton('❕ Film & TV Series ❕', url='https://t.me/infinityCLK')
             ],[
             InlineKeyboardButton('🏠 Home', callback_data='start'),
-            InlineKeyboardButton('♨️ Status', callback_data='stats')
+            InlineKeyboardButton('👁‍🗨 Status', callback_data='stats')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -438,7 +438,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "howtofind":
         buttons = [[
             InlineKeyboardButton('👩‍🦯 Back', callback_data='help'),
-            InlineKeyboardButton('⏹️ Want Groups', callback_data='grupak')
+            InlineKeyboardButton('🌐 Want Groups', callback_data='grupak')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
