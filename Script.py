@@ -1,19 +1,15 @@
 class script(object):
     START_TXT = """කොහොමද ඉතින්  {},
 මන් සිංහල උපසිරැසි බොට් කෙනෙක්. ඔයාගෙ Group එකටත් මාව ඇඩ් කරල මට ඇඩ්මින් දෙන්න."""
-
     HELP_TXT = """ හායි {}
 බොට්ව පාවිච්චි කරන හැටි සිංහලෙන්ම තියෙනවා ඕන්."""
-
     MORE_TXT = """ More help for group managment """
-
     ABOUT_TXT = """○ ᴍʏ ɴᴀᴍᴇ : සිංහල සබ් බොට්
     ○ ʟᴀɴɢᴜᴀɢᴇ: ᴘʏᴛʜᴏɴ
     ○ ғʀᴀᴍᴇᴡᴏʀᴋ: ᴘʏʀᴏɢʀᴀᴍ
     ○ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ :🔐
     ○ ᴠᴇʀsɪᴏɴ : 2.7.7
-    ○ ᴄʀᴇᴀᴛᴏʀ : ᴇᴠᴀ ᴍᴀʀɪᴀ ᴄʀᴇᴀᴛᴇʀꜱ"""  
-    
+    ○ ᴄʀᴇᴀᴛᴏʀ : ᴇᴠᴀ ᴍᴀʀɪᴀ ᴄʀᴇᴀᴛᴇʀꜱ"""
     MANUELFILTER_TXT = """Help: <b>Filters</b>
 
 - Filter is the feature were users can set automated replies for a particular keyword and tessa will respond whenever a keyword is found the message
@@ -28,7 +24,6 @@ class script(object):
 • /filters - <code>list all the filters of a chat</code>
 • /del - <code>delete a specific filter in chat</code>
 • /delall - <code>delete the whole filters in a chat (chat owner only)</code>"""
-
     GRUPAK_TXT = """Help: <b>Sinahala Subtitle Groups</b>
 
 - Sinahala Sub Groups In Sri Lanka.
@@ -39,7 +34,6 @@ class script(object):
 
 ★ ඔයාගෙ එකත් මෙතනට දාගන්න ඇඩ්මින් කෙනෙක් කන්ටැක්ට් කරගන්න. @Pokemon_Academy_contactbot
 """
-
     HOWTOGIVE_TXT = """Help: <b>ඔයාගෙ සබ් බොට්ට ඇඩ් කරන්නෙ කොහොමද? </b>
 
 <b>NOTE:</b>
@@ -47,8 +41,7 @@ class script(object):
 2. අනේ ඉතින් සිංහල සබ් ඇර වෙන එකේක එව්ව තියෙන ඒව නම් එපා සාන්ත.
 3. සාමාන්‍ය විදිහට චැනල් එකේ අන්තිමට දාල තියෙන මැසේජ් එක මට ෆෝවර්ඩ් කරන්න.
  ඉතිරි හරිය මන් බලාගන්නම් ."""
-
-   BUTTON_TXT = """Help: <b>Buttons</b>
+    BUTTON_TXT = """Help: <b>Buttons</b>
 
 - Bot Supports both url and alert inline buttons.
 
@@ -69,7 +62,6 @@ class script(object):
 2. make sure that your channel does not contains camrips, porn and fake files.
 3. Forward the last message to me with quotes.
  I'll add all the files in that channel to my db."""
-
     CONNECTION_TXT = """Help: <b>Connections</b>
 
 - Used to connect bot to PM for managing filters 
@@ -83,7 +75,6 @@ class script(object):
 • /connect  - <code>connect a particular chat to your PM</code>
 • /disconnect  - <code>disconnect from a chat</code>
 • /connections - <code>list all your connections</code>"""
-
     EXTRAMOD_TXT = """Help: <b>Extra Modules</b>
 
 <b>NOTE:</b>
@@ -94,7 +85,6 @@ these are the extra features of tessa
 • /info  - <code>get information about a user.</code>
 • /imdb  - <code>get the film information from IMDb source.</code>
 • /search  - <code>get the film information from various sources.</code>"""
-
     ADMIN_TXT = """Help: <b>Admin mods</b>
 
 <b>NOTE:</b>
@@ -111,13 +101,11 @@ This module only works for my admins
 • /unban  - <code>to unban a user.</code>
 • /channel - <code>to get list of total connected channels</code>
 • /broadcast - <code>to broadcast a message to all users</code>"""
-
     STATUS_TXT = """★ ᴛᴏᴛᴀʟ ꜰɪʟᴇꜱ: <code>{}</code>
 ★ ᴛᴏᴛᴀʟ ᴜꜱᴇʀꜱ: <code>{}</code>
 ★ ᴛᴏᴛᴀʟ ᴄʜᴀᴛꜱ: <code>{}</code>
 ★ ᴜꜱᴇᴅ ꜱᴛᴏʀᴀɢᴇ: <code>{}</code> 𝙼𝚒𝙱
 ★ ꜰʀᴇᴇ ꜱᴛᴏʀᴀɢᴇ: <code>{}</code> 𝙼𝚒𝙱"""
-
     HOWTOFIND_TXT = """Help: <b>සබ් බොට්ගෙන් සබ් ගන්නෙ කොහොමද ? </b>
 
 - බොට්ගෙන් සබ් ගන්න කලින් ඔයා අනිවාර්‍යෙන්ම බොට් ඉන්න group එකක මෙම්බර් කෙනෙක් වෙලා ඉන්න ඔනෙ, එහෙම නැතුව botට මැසේජ් දැම්මට වැඩක් නැහැ
@@ -128,7 +116,6 @@ This module only works for my admins
 3. අපේ ඩේටබේස් එකේ ඔයා හොයන දේ තියෙනවනම් ඉක්මනට හොයාගන්න පුලුවන්.
 
 • සබ් group නැත්තන් පහල එකට join වෙන්න. """
-
     AUTOFILTER_TXT = """Help: <b>Auto Filter</b>
 
 <b>NOTE:</b>
@@ -136,7 +123,6 @@ This module only works for my admins
 2. make sure that your channel does not contains camrips, porn and fake files.
 3. Forward the last message to me with quotes.
  I'll add all the files in that channel to my db."""
-
     LOG_TEXT_G = """#NewGroup
 Group = {}(<code>{}</code>)
 Total Members = <code>{}</code>
