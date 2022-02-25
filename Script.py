@@ -1,13 +1,17 @@
 class script(object):
-    START_TXT = """ʜᴇʏ {},
-ɪᴍ ᴠᴇʀʏ ᴘᴏᴡᴇʀꜰᴜʟ ʙᴏᴛ ᴛʜᴀᴛ ᴄᴀɴ ꜱᴇᴀʀᴄʜ ᴀɴʏ ᴍᴏᴠɪᴇ ɪɴ ᴀɴʏ ɢʀᴏᴜᴘ. ᴀᴅᴅ ᴍᴇ ᴛᴏ ʏᴏᴜʀ ɢʀᴏᴜᴘ ᴀɴᴅ ꜱᴇᴇ ᴛʜᴇ ᴍᴀɢɪᴄ"""
-    HELP_TXT = """ HEh {}
-HERE IS THE HELP FOR COMMANDS."""
-    ABOUT_TXT = """○ ᴍʏ ɴᴀᴍᴇ : ɪɴꜰɪɴɪᴛʏ ᴍᴏᴠɪᴇꜱ
+    START_TXT = """කොහොමද ඉතින්  {},
+මන් සිංහල උපසිරැසි බොට් කෙනෙක්. ඔයාගෙ Group එකටත් මාව ඇඩ් කරල මට ඇඩ්මින් දෙන්න."""
+
+    HELP_TXT = """ හායි {}
+බොට්ව පාවිච්චි කරන හැටි සිංහලෙන්ම තියෙනවා ඕන්."""
+
+    MORE_TXT = """ More help for group managment """
+
+    ABOUT_TXT = """○ ᴍʏ ɴᴀᴍᴇ : සිංහල සබ් බොට්
     ○ ʟᴀɴɢᴜᴀɢᴇ: ᴘʏᴛʜᴏɴ
     ○ ғʀᴀᴍᴇᴡᴏʀᴋ: ᴘʏʀᴏɢʀᴀᴍ
     ○ sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ :🔐
-    ○ ᴠᴇʀsɪᴏɴ : 3.0.0
+    ○ ᴠᴇʀsɪᴏɴ : 2.7.7
     ○ ᴄʀᴇᴀᴛᴏʀ : ᴇᴠᴀ ᴍᴀʀɪᴀ ᴄʀᴇᴀᴛᴇʀꜱ"""  
     
     MANUELFILTER_TXT = """Help: <b>Filters</b>
@@ -24,7 +28,27 @@ HERE IS THE HELP FOR COMMANDS."""
 • /filters - <code>list all the filters of a chat</code>
 • /del - <code>delete a specific filter in chat</code>
 • /delall - <code>delete the whole filters in a chat (chat owner only)</code>"""
-    BUTTON_TXT = """Help: <b>Buttons</b>
+
+    GRUPAK_TXT = """Help: <b>Sinahala Subtitle Groups</b>
+
+- Sinahala Sub Groups In Sri Lanka.
+• <b>@Subsinfinity_Sinhala_Subtitles - </b><code>{3K}</code>
+• 
+• 
+• 
+
+★ ඔයාගෙ එකත් මෙතනට දාගන්න ඇඩ්මින් කෙනෙක් කන්ටැක්ට් කරගන්න. @Pokemon_Academy_contactbot
+"""
+
+    HOWTOGIVE_TXT = """Help: <b>ඔයාගෙ සබ් බොට්ට ඇඩ් කරන්නෙ කොහොමද? </b>
+
+<b>NOTE:</b>
+1. ඔයාගෙ සබ් තියෙන චැනල් එක privet චැනල් එකක් නම් මාව ඒකෙ ඇඩ්න් කරන්න.
+2. අනේ ඉතින් සිංහල සබ් ඇර වෙන එකේක එව්ව තියෙන ඒව නම් එපා සාන්ත.
+3. සාමාන්‍ය විදිහට චැනල් එකේ අන්තිමට දාල තියෙන මැසේජ් එක මට ෆෝවර්ඩ් කරන්න.
+ ඉතිරි හරිය මන් බලාගන්නම් ."""
+
+   BUTTON_TXT = """Help: <b>Buttons</b>
 
 - Bot Supports both url and alert inline buttons.
 
@@ -45,6 +69,7 @@ HERE IS THE HELP FOR COMMANDS."""
 2. make sure that your channel does not contains camrips, porn and fake files.
 3. Forward the last message to me with quotes.
  I'll add all the files in that channel to my db."""
+
     CONNECTION_TXT = """Help: <b>Connections</b>
 
 - Used to connect bot to PM for managing filters 
@@ -58,6 +83,7 @@ HERE IS THE HELP FOR COMMANDS."""
 • /connect  - <code>connect a particular chat to your PM</code>
 • /disconnect  - <code>disconnect from a chat</code>
 • /connections - <code>list all your connections</code>"""
+
     EXTRAMOD_TXT = """Help: <b>Extra Modules</b>
 
 <b>NOTE:</b>
@@ -68,6 +94,7 @@ these are the extra features of tessa
 • /info  - <code>get information about a user.</code>
 • /imdb  - <code>get the film information from IMDb source.</code>
 • /search  - <code>get the film information from various sources.</code>"""
+
     ADMIN_TXT = """Help: <b>Admin mods</b>
 
 <b>NOTE:</b>
@@ -84,11 +111,32 @@ This module only works for my admins
 • /unban  - <code>to unban a user.</code>
 • /channel - <code>to get list of total connected channels</code>
 • /broadcast - <code>to broadcast a message to all users</code>"""
+
     STATUS_TXT = """★ ᴛᴏᴛᴀʟ ꜰɪʟᴇꜱ: <code>{}</code>
 ★ ᴛᴏᴛᴀʟ ᴜꜱᴇʀꜱ: <code>{}</code>
 ★ ᴛᴏᴛᴀʟ ᴄʜᴀᴛꜱ: <code>{}</code>
 ★ ᴜꜱᴇᴅ ꜱᴛᴏʀᴀɢᴇ: <code>{}</code> 𝙼𝚒𝙱
 ★ ꜰʀᴇᴇ ꜱᴛᴏʀᴀɢᴇ: <code>{}</code> 𝙼𝚒𝙱"""
+
+    HOWTOFIND_TXT = """Help: <b>සබ් බොට්ගෙන් සබ් ගන්නෙ කොහොමද ? </b>
+
+- බොට්ගෙන් සබ් ගන්න කලින් ඔයා අනිවාර්‍යෙන්ම බොට් ඉන්න group එකක මෙම්බර් කෙනෙක් වෙලා ඉන්න ඔනෙ, එහෙම නැතුව botට මැසේජ් දැම්මට වැඩක් නැහැ
+
+<b>NOTE:</b>
+1. මේ bot ඉන්න group එකක මෙම්බර් කෙනෙක් වෙලා ඉන්න ඔනෙ.
+2. ඔයාට ඕනෙ සබ් එකේ නම group එකට දාන්න, ඔයා හොයන්නෙ ෆිල්ම් එකක් නම් රිලීස් කරපු අව්‍රැද්දත් එක්ක දාන්න.
+3. අපේ ඩේටබේස් එකේ ඔයා හොයන දේ තියෙනවනම් ඉක්මනට හොයාගන්න පුලුවන්.
+
+• සබ් group නැත්තන් පහල එකට join වෙන්න. """
+
+    AUTOFILTER_TXT = """Help: <b>Auto Filter</b>
+
+<b>NOTE:</b>
+1. Make me the admin of your channel if it's private.
+2. make sure that your channel does not contains camrips, porn and fake files.
+3. Forward the last message to me with quotes.
+ I'll add all the files in that channel to my db."""
+
     LOG_TEXT_G = """#NewGroup
 Group = {}(<code>{}</code>)
 Total Members = <code>{}</code>
