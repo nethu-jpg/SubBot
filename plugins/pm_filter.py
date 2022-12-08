@@ -5,7 +5,7 @@ import ast
 from Script import script
 import pyrogram
 from database.connections_mdb import active_connection, all_connections, delete_connection, if_active, make_active, make_inactive
-from info import ADMINS, AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, AUTH_GROUPS, P_TTTI_SHOW_OFF, IMDB, SINGLE_BUTTON
+from info import ADMINS, AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, AUTH_GROUPS, P_TTTI_SHOW_OFF, IMDB, SINGLE_BUTTON, PHO
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram import Client, filters
 from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, PeerIdInvalid
@@ -633,5 +633,5 @@ async def auto_filter(client, message):
         elif imdb:
             await message.reply_text(f"<b>හොයපු සබ් එක : {search}</b> \n‌‌‌‌IMDb Data:\n\n🏷 Title: <a href={imdb['url']}>{imdb.get('title')}</a>\n📆 Year: <a href={imdb['url']}/releaseinfo>{imdb.get('year')}</a>\n🌟 Rating: <a href={imdb['url']}/ratings>{imdb.get('rating')}</a> / 10 \n\n<b><a href='https://t.me/Pokemon_Academy'>©️ ᴘᴏᴋᴇᴍᴏɴ ᴀᴄᴀᴅᴇᴍʏ</a> ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(btn))
         else:
-            await message.reply_text(f"<b>මෙන්න ඔයා හොයපු සබ් එක  {search} ‌‌‌‌‎ \n\n<a href='https://t.me/Pokemon_Academy'>©️ ᴘᴏᴋᴇᴍᴏɴ ᴀᴄᴀᴅᴇᴍʏ</a> ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(btn))
+            await message.reply_photo(photo=random.choice(PHO), caption=f"<b>මෙන්න ඔයා හොයපු සබ් එක  {search} ‌‌‌‌‎ \n\n<a href='https://t.me/Pokemon_Academy'>©️ ᴘᴏᴋᴇᴍᴏɴ ᴀᴄᴀᴅᴇᴍʏ</a> ‌‌‌‌‎ ­  ­  ­  ­  ­  </b>", reply_markup=InlineKeyboardMarkup(btn))
         
