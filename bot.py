@@ -16,8 +16,9 @@ from utils import temp
 
 class Bot(Client):
 
-    def __init__(self):
+    def __init__(self, name):
         super().__init__(
+            name=name,
             api_id=API_ID,
             api_hash=API_HASH,
             bot_token=BOT_TOKEN,
@@ -43,5 +44,5 @@ class Bot(Client):
         await super().stop()
         print("Bot stopped. Bye.")
 
-app = Bot()
+app = Bot(name="my_bot")
 app.run()
