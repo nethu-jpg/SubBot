@@ -45,7 +45,7 @@ async def start(client, message):
             photo=random.choice(PICS),
             caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
-            parse_mode='markdown'
+            parse_mode="Markdown"
         )
         return
     if AUTH_CHANNEL and not await is_subscribed(client, message):
@@ -68,7 +68,7 @@ async def start(client, message):
             chat_id=message.from_user.id,
             text="**Please Join My Updates Channel to use this Bot!**",
             reply_markup=InlineKeyboardMarkup(btn),
-            parse_mode="markdown"
+            parse_mode="Markdown"
             )
         return
     if len(message.command) ==2 and message.command[1] in ["subscribe", "error", "okay"]:
@@ -83,7 +83,7 @@ async def start(client, message):
             photo=random.choice(PICS),
             caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
-            parse_mode='markdown'
+            parse_mode="Markdown"
         )
         return
     file_id = message.command[1]
