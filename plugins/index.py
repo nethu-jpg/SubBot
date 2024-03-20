@@ -144,10 +144,12 @@ async def index_files_to_db(lst_msg_id, chat, msg, bot):
             temp.CANCEL = False
             while current < total:
                 if temp.CANCEL:
-                    await msg.edit("Succesfully Cancelled")
+                    await msg.edit("Successfully Cancelled")
                     break
                 try:
                     message = await bot.get_messages(chat_id=chat, message_ids=current, replies=0)
+                    # Logging to check the attributes of the message object
+                    logger.info(f"Message attributes: {message}")
                 except FloodWait as e:
                     await asyncio.sleep(e.x)
                     message = await bot.get_messages(
@@ -156,8 +158,11 @@ async def index_files_to_db(lst_msg_id, chat, msg, bot):
                         replies=0
                     )
                 except Exception as e:
+                    logger.exception(f"Error fetching message: {e}")
                     print(e)
+                    continue  # Continue to the next iteration if there's an error fetching the message
                 try:
+                    # Check if the message object has attributes like 'document', 'video', 'audio'
                     for file_type in ("document", "video", "audio"):
                         media = getattr(message, file_type, None)
                         if media is not None:
@@ -174,19 +179,20 @@ async def index_files_to_db(lst_msg_id, chat, msg, bot):
                     elif vnay == 2:
                         errors += 1
                 except TypeError:
-                    print("Skipping deleted messages (if this continues for long use /setskip to set a skip number)")
+                    logger.warning("Skipping deleted messages")
                     deleted += 1
                 except Exception as e:
+                    logger.exception(f"Error processing message: {e}")
                     print(e)
                 current += 1
                 if current % 20 == 0:
                     can = [[InlineKeyboardButton('Cancel', callback_data='index_cancel')]]
                     reply = InlineKeyboardMarkup(can)
                     await msg.edit_text(
-                        text=f"Total messages fetched: <code>{current}</code>\nTotal messages saved: <code>{total_files}</code>\nDuplicate Files Skipped: <code>{duplicate}</code>\nDeleted Messages Skipped: <code>{deleted}</code>\nErrors Occured: <code>{errors}</code>",
+                        text=f"Total messages fetched: <code>{current}</code>\nTotal messages saved: <code>{total_files}</code>\nDuplicate Files Skipped: <code>{duplicate}</code>\nDeleted Messages Skipped: <code>{deleted}</code>\nErrors Occurred: <code>{errors}</code>",
                         reply_markup=reply)
         except Exception as e:
-            logger.exception(e)
+            logger.exception(f"Error in indexing files: {e}")
             await msg.edit(f'Error: {e}')
         else:
-            await msg.edit(f'Succesfully saved <code>{total_files}</code> to dataBase!\nDuplicate Files Skipped: <code>{duplicate}</code>\nDeleted Messages Skipped: <code>{deleted}</code>\nErrors Occured: <code>{errors}</code>')
+            await msg.edit(f'Successfully saved <code>{total_files}</code> to database!\nDuplicate Files Skipped: <code>{duplicate}</code>\nDeleted Messages Skipped: <code>{deleted}</code>\nErrors Occurred: <code>{errors}</code>')
